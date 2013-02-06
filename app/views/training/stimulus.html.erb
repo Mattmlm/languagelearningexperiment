@@ -3,3 +3,9 @@
 <div class='img_wrapper'>
 	<img src='<%= @training_image %>' />
 </div>
+<% if @stimulus_counter < @max_stimuli %>
+	<%= link_to "Next stimulus", training_stimulus_path %>
+	<% @stimulus_counter = @stimulus_counter + 1 %>
+<% else %>
+	<%= link_to "Start Testing", training_stimulus_path %>
+<% end %>
