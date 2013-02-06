@@ -18,6 +18,7 @@
 pickle-email-*.html
 
 # Suggested ignore from github
+.rvmrc
 *.rbc
 *.sassc
 .sass-cache
