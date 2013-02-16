@@ -3,8 +3,6 @@ Languagelearningexperiment::Application.routes.draw do
   
   match 'training/start' => 'training#start', :as => 'training'
   
-  resources :user_entries
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
