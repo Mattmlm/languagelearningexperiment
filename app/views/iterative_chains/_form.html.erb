@@ -1,0 +1,25 @@
+<%= form_for(@iterative_chain) do |f| %>
+  <% if @iterative_chain.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@iterative_chain.errors.count, "error") %> prohibited this iterative_chain from being saved:</h2>
+
+      <ul>
+      <% @iterative_chain.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :chain %><br />
+    <%= f.text_area :chain %>
+  </div>
+  <div class="field">
+    <%= f.label :num_users %><br />
+    <%= f.number_field :num_users %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

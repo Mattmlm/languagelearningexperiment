@@ -11,11 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130206085335) do
+ActiveRecord::Schema.define(:version => 20130227075959) do
+
+  create_table "iterative_chains", :force => true do |t|
+    t.integer  "num_users"
+    t.text     "chain"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "user_entries", :force => true do |t|
-    t.string   "mapping"
-    t.text     "entry"
+    t.text     "pairs"
+    t.integer  "chain_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Pairs:</b>
+  <%= @user_entry.pairs %>
+</p>
+
+<p>
+  <b>Chain:</b>
+  <%= @user_entry.chain_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_entry_path(@user_entry) %> |
+<%= link_to 'Back', user_entries_path %>

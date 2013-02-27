@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  pairs: MyText
+  chain_id: 1
+
+two:
+  pairs: MyText
+  chain_id: 1
