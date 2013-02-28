@@ -1,11 +1,8 @@
 Languagelearningexperiment::Application.routes.draw do
+  
   resources :user_entries
 
   resources :iterative_chains
-
-  get "training/stimulus"
-  
-  match 'training/start' => 'training#start', :as => 'training'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -57,7 +54,7 @@ Languagelearningexperiment::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => 'welcome#index'
-  root :to => 'training#start', as: 'training'
+  root :to => 'user_entries#index'
 
   # See how all your routes lay out with "rake routes"
 
