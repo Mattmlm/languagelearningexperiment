@@ -20,8 +20,8 @@ user_entries = UserEntry.create([
       { sound: "gaab", image: "rock climbing" },
       { sound: "goob", image: "swimming" },
       { sound: "boog", image: "running" },
-      { sound: "baab", image: "jumping on a trampoline" },
-      { sound: "goog", image: "moping" }
+      { sound: "baab", image: "jumping on trampoline" },
+      { sound: "goog", image: "mopping" }
     ]
   },
   { chain_id: 2,
@@ -34,8 +34,8 @@ user_entries = UserEntry.create([
       { sound: "gaab", image: "rock climbing" },
       { sound: "goob", image: "swimming" },
       { sound: "boog", image: "running" },
-      { sound: "baab", image: "jumping on a trampoline" },
-      { sound: "goog", image: "moping" }
+      { sound: "baab", image: "jumping on trampoline" },
+      { sound: "goog", image: "mopping" }
     ]
   },
   { chain_id: 3,
@@ -48,8 +48,8 @@ user_entries = UserEntry.create([
       { sound: "gaab", image: "rock climbing" },
       { sound: "goob", image: "swimming" },
       { sound: "boog", image: "running" },
-      { sound: "baab", image: "jumping on a trampoline" },
-      { sound: "goog", image: "moping" }
+      { sound: "baab", image: "jumping on trampoline" },
+      { sound: "goog", image: "mopping" }
     ]
   }
 ])
