@@ -80,4 +80,17 @@ class UserEntriesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  # Training /user_entries/training
+  def training
+    @user_entries = UserEntry.all
+    @user_id = 1
+    @stimuli = UserEntry.find(@user_id).pairs
+    
+    respond_to do |format|
+      format.html # training.html.erb
+      format.json { render json: @user_entries }
+    end
+  end
+  
 end

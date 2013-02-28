@@ -1,5 +1,7 @@
 Languagelearningexperiment::Application.routes.draw do
   
+  match 'user_entries/training' => 'user_entries#training', :as => 'training'
+  
   resources :user_entries
 
   resources :iterative_chains

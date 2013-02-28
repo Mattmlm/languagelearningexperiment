@@ -1,0 +1,15 @@
+<h1>Training</h1>
+<p>Please listen to the sound displayed with the image</p>
+<% @stimuli.each_with_index do |stimulus, index| %>
+<div class="training_stimulus" id='<%= "stimuli_" + index.to_s %>'>
+	<div class='img_wrapper'>
+		<%= image_tag stimulus[:image] + ".jpg" %>
+	</div>
+	<div class='audio_wrapper'>
+		<%= content_tag(:audio, stimulus[:sound], :controls => "controls") do %>
+		<%= content_tag(:source, "", :src => "/assets/" + stimulus[:sound] + ".wav") %>
+		<% end %>
+	</div>
+</div>
+<% end %>
+<%= javascript_include_tag "training" %>
