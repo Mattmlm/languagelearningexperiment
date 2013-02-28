@@ -9,67 +9,51 @@
 UserEntry.delete_all
 IterativeChain.delete_all
 
-# user_entries = UserEntry.create([
-#   {
-#     chain_id: 1,
-#     pairs: [{
-#       "fej": "key",
-#       "feej": "truck",
-#       "jef": "feather",
-#       "jeej": "lamp",
-#       "fef": "window",
-#       "gaab": "rock climbing",
-#       "goob": "swimming",
-#       "boog": "running",
-#       "baab": "jumping on a trampoline",
-#       "goog": "moping"
-#     }]
-#   }
-# ])
-# iterative_chains = IterativeChain.create([
-#     {
-#       num_users: 0
-#     }
-#     chain: {
-#         "user0": {
-#             "fej": "key",
-#             "feej": "truck",
-#             "jef": "feather",
-#             "jeej": "lamp",
-#             "fef": "window",
-#             "gaab": "rock climbing",
-#             "goob": "swimming",
-#             "boog": "running",
-#             "baab": "jumping on a trampoline",
-#             "goog": "moping"
-#         }
-#     }},{
-#     "chain": {
-#         "user0": {
-#             "fej": "key",
-#             "feej": "truck",
-#             "jef": "feather",
-#             "jeej": "lamp",
-#             "fef": "window",
-#             "gaab": "rock climbing",
-#             "goob": "swimming",
-#             "boog": "running",
-#             "baab": "jumping on a trampoline",
-#             "goog": "moping"
-#         }
-#     }},{
-#     "chain": {
-#         "user0": {
-#             "fej": "key",
-#             "feej": "truck",
-#             "jef": "feather",
-#             "jeej": "lamp",
-#             "fef": "window",
-#             "gaab": "rock climbing",
-#             "goob": "swimming",
-#             "boog": "running",
-#             "baab": "jumping on a trampoline",
-#             "goog": "moping"
-#         }
-#     }
-# }])
+user_entries = UserEntry.create([
+  { chain_id: 1,
+    pairs: [
+      { sound: "fej", image: "key" },
+      { sound: "feej", image: "truck" },
+      { sound: "jef", image: "feather" },
+      { sound: "jeej", image: "lamp" },
+      { sound: "fef", image: "window" },
+      { sound: "gaab", image: "rock climbing" },
+      { sound: "goob", image: "swimming" },
+      { sound: "boog", image: "running" },
+      { sound: "baab", image: "jumping on a trampoline" },
+      { sound: "goog", image: "moping" }
+    ]
+  },
+  { chain_id: 2,
+    pairs: [
+      { sound: "fej", image: "key" },
+      { sound: "feej", image: "truck" },
+      { sound: "jef", image: "feather" },
+      { sound: "jeej", image: "lamp" },
+      { sound: "fef", image: "window" },
+      { sound: "gaab", image: "rock climbing" },
+      { sound: "goob", image: "swimming" },
+      { sound: "boog", image: "running" },
+      { sound: "baab", image: "jumping on a trampoline" },
+      { sound: "goog", image: "moping" }
+    ]
+  },
+  { chain_id: 3,
+    pairs: [
+      { sound: "fej", image: "key" },
+      { sound: "feej", image: "truck" },
+      { sound: "jef", image: "feather" },
+      { sound: "jeej", image: "lamp" },
+      { sound: "fef", image: "window" },
+      { sound: "gaab", image: "rock climbing" },
+      { sound: "goob", image: "swimming" },
+      { sound: "boog", image: "running" },
+      { sound: "baab", image: "jumping on a trampoline" },
+      { sound: "goog", image: "moping" }
+    ]
+  }
+])
+
+for i in 0..(user_entries.length-1)
+  IterativeChain.create(num_users: 0, chain: user_entries[i])
+end
