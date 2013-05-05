@@ -80,4 +80,11 @@ class IterativeChainsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def start
+    # respond_to do |format|
+    #   format.html { redirect_to iterative_chains_url }
+    #   format.json { head :no_content }
+    # end
+  end
 end
