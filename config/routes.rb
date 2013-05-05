@@ -1,10 +1,14 @@
 Languagelearningexperiment::Application.routes.draw do
-  
-  match 'user_entries/training' => 'user_entries#training', :as => 'training'
-  
-  resources :user_entries
 
-  resources :iterative_chains
+  # match 'iterative_chains/start' => 'iterative_chains#start', :as => 'start'
+  # match 'user_entries/training' => 'user_entries#training', :as => 'training'
+  
+  get 'iterative_chains/:iterative_chain_id(/:controller(/:action(/:id)))'
+  get ':controller(/:action(/:id))'
+  
+  resources :iterative_chains do
+    resources :user_entries
+  end
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
