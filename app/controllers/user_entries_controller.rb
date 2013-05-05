@@ -81,6 +81,10 @@ class UserEntriesController < ApplicationController
     end
   end
   
+  def instructions
+    
+  end
+  
   # Training /user_entries/training
   def training
     @user_entries = UserEntry.all
