@@ -2,8 +2,8 @@
 
 one:
   pairs: MyText
-  chain_id: 1
+  iterative_chain_id: 1
 
 two:
   pairs: MyText
-  chain_id: 1
+  iterative_chain_id: 1

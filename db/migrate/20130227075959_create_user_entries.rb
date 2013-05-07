@@ -2,7 +2,7 @@ class CreateUserEntries < ActiveRecord::Migration
   def change
     create_table :user_entries do |t|
       t.text :pairs
-      t.integer :chain_id
+      t.integer :iterative_chain_id
 
       t.timestamps
     end

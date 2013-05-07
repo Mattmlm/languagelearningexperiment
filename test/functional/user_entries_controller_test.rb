@@ -18,7 +18,7 @@ class UserEntriesControllerTest < ActionController::TestCase
 
   test "should create user_entry" do
     assert_difference('UserEntry.count') do
-      post :create, user_entry: { chain_id: @user_entry.chain_id, pairs: @user_entry.pairs }
+      post :create, user_entry: { iterative_chain_id: @user_entry.iterative_chain_id, pairs: @user_entry.pairs }
     end
 
     assert_redirected_to user_entry_path(assigns(:user_entry))
@@ -35,7 +35,7 @@ class UserEntriesControllerTest < ActionController::TestCase
   end
 
   test "should update user_entry" do
-    put :update, id: @user_entry, user_entry: { chain_id: @user_entry.chain_id, pairs: @user_entry.pairs }
+    put :update, id: @user_entry, user_entry: { iterative_chain_id: @user_entry.iterative_chain_id, pairs: @user_entry.pairs }
     assert_redirected_to user_entry_path(assigns(:user_entry))
   end
 

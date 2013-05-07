@@ -21,9 +21,9 @@ ActiveRecord::Schema.define(:version => 20130507075156) do
 
   create_table "user_entries", :force => true do |t|
     t.text     "pairs"
-    t.integer  "chain_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "iterative_chain_id"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
   end
 
 end
