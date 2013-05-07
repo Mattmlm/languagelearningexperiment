@@ -9,51 +9,19 @@
 UserEntry.delete_all
 IterativeChain.delete_all
 
-user_entries = UserEntry.create([
-  { chain_id: 1,
-    pairs: [
-      { sound: "fej", image: "key" },
-      { sound: "feej", image: "truck" },
-      { sound: "jef", image: "feather" },
-      { sound: "jeej", image: "lamp" },
-      { sound: "fef", image: "window" },
-      { sound: "gaab", image: "rock climbing" },
-      { sound: "goob", image: "swimming" },
-      { sound: "boog", image: "running" },
-      { sound: "baab", image: "jumping on trampoline" },
-      { sound: "goog", image: "mopping" }
-    ]
-  },
-  { chain_id: 2,
-    pairs: [
-      { sound: "fej", image: "key" },
-      { sound: "feej", image: "truck" },
-      { sound: "jef", image: "feather" },
-      { sound: "jeej", image: "lamp" },
-      { sound: "fef", image: "window" },
-      { sound: "gaab", image: "rock climbing" },
-      { sound: "goob", image: "swimming" },
-      { sound: "boog", image: "running" },
-      { sound: "baab", image: "jumping on trampoline" },
-      { sound: "goog", image: "mopping" }
-    ]
-  },
-  { chain_id: 3,
-    pairs: [
-      { sound: "fej", image: "key" },
-      { sound: "feej", image: "truck" },
-      { sound: "jef", image: "feather" },
-      { sound: "jeej", image: "lamp" },
-      { sound: "fef", image: "window" },
-      { sound: "gaab", image: "rock climbing" },
-      { sound: "goob", image: "swimming" },
-      { sound: "boog", image: "running" },
-      { sound: "baab", image: "jumping on trampoline" },
-      { sound: "goog", image: "mopping" }
-    ]
-  }
-])
-
-for i in 0..(user_entries.length-1)
-  IterativeChain.create(num_users: 0, chain: user_entries[i])
+num_chains = 3
+for i in 1..num_chains
+  iterative_chain = IterativeChain.create(locked: false)
+  user_entry = iterative_chain.user_entries.create(pairs: [
+    { sound: "fej", image: "key" },
+    { sound: "feej", image: "truck" },
+    { sound: "jef", image: "feather" },
+    { sound: "jeej", image: "lamp" },
+    { sound: "fef", image: "window" },
+    { sound: "gaab", image: "rock climbing" },
+    { sound: "goob", image: "swimming" },
+    { sound: "boog", image: "running" },
+    { sound: "baab", image: "jumping on trampoline" },
+    { sound: "goog", image: "mopping" }
+  ])
 end
