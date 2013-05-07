@@ -2,8 +2,7 @@
 
 <table>
   <tr>
-    <th>Chain</th>
-    <th>Num users</th>
+    <th>Locked</th>
     <th></th>
     <th></th>
     <th></th>
@@ -11,8 +10,7 @@
 
 <% @iterative_chains.each do |iterative_chain| %>
   <tr>
-    <td><%= iterative_chain.chain %></td>
-    <td><%= iterative_chain.num_users %></td>
+    <td><%= iterative_chain.locked %></td>
     <td><%= link_to 'Show', iterative_chain %></td>
     <td><%= link_to 'Edit', edit_iterative_chain_path(iterative_chain) %></td>
     <td><%= link_to 'Destroy', iterative_chain, method: :delete, data: { confirm: 'Are you sure?' } %></td>

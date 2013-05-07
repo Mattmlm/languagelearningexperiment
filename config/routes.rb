@@ -1,10 +1,10 @@
 Languagelearningexperiment::Application.routes.draw do
   
+  resources :iterative_chains
+
   match 'user_entries/training' => 'user_entries#training', :as => 'training'
   
   resources :user_entries
-
-  resources :iterative_chains
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

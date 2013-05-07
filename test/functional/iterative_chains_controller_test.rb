@@ -18,7 +18,7 @@ class IterativeChainsControllerTest < ActionController::TestCase
 
   test "should create iterative_chain" do
     assert_difference('IterativeChain.count') do
-      post :create, iterative_chain: { chain: @iterative_chain.chain, num_users: @iterative_chain.num_users }
+      post :create, iterative_chain: { locked: @iterative_chain.locked }
     end
 
     assert_redirected_to iterative_chain_path(assigns(:iterative_chain))
@@ -35,7 +35,7 @@ class IterativeChainsControllerTest < ActionController::TestCase
   end
 
   test "should update iterative_chain" do
-    put :update, id: @iterative_chain, iterative_chain: { chain: @iterative_chain.chain, num_users: @iterative_chain.num_users }
+    put :update, id: @iterative_chain, iterative_chain: { locked: @iterative_chain.locked }
     assert_redirected_to iterative_chain_path(assigns(:iterative_chain))
   end
 
