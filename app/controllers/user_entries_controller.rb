@@ -82,10 +82,11 @@ class UserEntriesController < ApplicationController
   end
   
   # Training /user_entries/training
+  # Training /iterative_chains/:iterative_chain_id/user_entries/training
   def training
-    @user_entries = UserEntry.all
-    @user_id = 1
-    @stimuli = UserEntry.find(@user_id).pairs
+    @iterative_chain = IterativeChain.find(params[:iterative_chain_id])
+    @user_entries = @iterative_chain.user_entries.last
+    @stimuli = @user_entries.pairs
     
     respond_to do |format|
       format.html # training.html.erb
