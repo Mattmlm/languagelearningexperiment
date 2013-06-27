@@ -38,6 +38,18 @@ IterativeChain.find(1).user_entries.create(pairs: [
   { sound: "baab", image: "jumping on trampoline" },
   { sound: "goog", image: "mopping" }
 ])
+IterativeChain.find(1).user_entries.create(pairs: [
+  { sound: "feej", image: "truck" },
+  { sound: "jeej", image: "lamp" },
+  { sound: "fef", image: "window" },
+  { sound: "goob", image: "swimming" },
+  { sound: "boog", image: "running" },
+  { sound: "baab", image: "jumping on trampoline" },
+  { sound: "fej", image: "key" },
+  { sound: "gaab", image: "rock climbing" },
+  { sound: "jef", image: "feather" },
+  { sound: "goog", image: "mopping" }
+])
 IterativeChain.find(2).user_entries.create(pairs: [
   { sound: "feej", image: "truck" },
   { sound: "jeej", image: "lamp" },
