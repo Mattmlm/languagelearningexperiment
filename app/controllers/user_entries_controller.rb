@@ -81,17 +81,53 @@ class UserEntriesController < ApplicationController
     end
   end
   
-  # Training /user_entries/training
-  # Training /iterative_chains/:iterative_chain_id/user_entries/training
+  # GET Training /user_entries/training
+  # GET Training /iterative_chains/:iterative_chain_id/user_entries/training
   def training
     @iterative_chain = IterativeChain.find(params[:iterative_chain_id])
-    @user_entries = @iterative_chain.user_entries.last
-    @stimuli = @user_entries.pairs
+    @user_entry = @iterative_chain.user_entries.last
+    @stimuli = @user_entry.pairs
+  end
+  
+  # GET Testing /user_entries/testing
+  # GET Testing /iterative_chains/:iterative_chain_id/user_entries/testing
+  def testing
+    @iterative_chain = IterativeChain.find(params[:iterative_chain_id])
+    @last_user_entry = @iterative_chain.user_entries.last
     
-    respond_to do |format|
-      format.html # training.html.erb
-      format.json { render json: @user_entries }
+    @phones = []
+    @sems = []
+    # Randomly sort the pairs of stimuli
+    @last_user_entry.pairs.each do |pair|
+      @phones = @phones.push(pair[:sound])
+      @sems = @sems.push(pair[:image])
     end
+    @phones = @phones.shuffle
+    @sems = @sems.shuffle
+    
+    @phone_to_sem = false
+    if (@iterative_chain.user_entries.size % 2) == 0
+      @phone_to_sem = true
+    end
+
+    # respond_to do |format|
+    #   format.html # new.html.erb
+    #   format.json { render json: @user_entry }
+    # end
+  end
+  
+  # POST Testing /user_entries/testing
+  # POST Testing /iterative_chains/:iterative_chain_id/user_entries/testing
+  def record
+    # respond_to do |format|
+    #   if @user_entry.save
+    #     format.html { redirect_to @user_entry, notice: 'User entry was successfully created.' }
+    #     format.json { render json: @user_entry, status: :created, location: @user_entry }
+    #   else
+    #     format.html { render action: "new" }
+    #     format.json { render json: @user_entry.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
   
 end

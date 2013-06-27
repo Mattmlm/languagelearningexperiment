@@ -9,6 +9,19 @@
       display: none;
     }
   }
+  
+//  Styling for Testing
+  .user-entries-testing {
+    .main-stimuli {
+      .img-wrapper, .audio-wrapper {
+        display: none;
+      }
+    }
+  }
+}
+
+.hide {
+  display: none !important;
 }
 .show {
   display: block !important;

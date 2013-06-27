@@ -1,0 +1,50 @@
+<div class="user-entries-testing">
+	<h1>Testing</h1>
+	<% if @phone_to_sem %>
+		<p>Phone to sem</p>
+		<div class='main-stimuli'>
+			<% @sems.each_with_index do |sem, index| %>
+				<% if index == 0 %>
+					<div class='img-wrapper' style='display: block'>
+				<% else %>
+					<div class='img-wrapper'>
+				<% end %>
+						<%= image_tag sem + ".jpg" %>
+					</div>
+			<% end %>
+		</div>
+		<% @phones.each_with_index do |phone, index| %>
+			<div class='audio-choice'>
+				<div class='audio-wrapper'>
+					<%= content_tag(:audio, phone, :controls => "controls") do %>
+						<%= content_tag(:source, "", :src => "/assets/" + phone + ".wav") %>
+					<% end %>
+				</div>
+				<input type="radio"/>
+			</div>
+		<% end %>
+	<% else %>
+		<p>Sem to phone</p>
+		<div class='main-stimuli'>
+			<% @phones.each_with_index do |phone, index| %>
+				<% if index == 0 %>
+					<div class='audio-wrapper' style='display: block'>
+				<% else %>
+					<div class='audio-wrapper'>
+				<% end %>
+						<%= content_tag(:audio, phone, :controls => "controls") do %>
+							<%= content_tag(:source, "", :src => "/assets/" + phone + ".wav") %>
+						<% end %>
+					</div>
+			<% end %>
+		</div>
+		<% @sems.each_with_index do |sem, index| %>
+			<div class='img-choice'>
+				<div class='img-wrapper'>
+					<%= image_tag sem + ".jpg" %>
+				</div>
+				<input type="radio"/>
+			</div>
+		<% end %>
+	<% end %>
+</div>
