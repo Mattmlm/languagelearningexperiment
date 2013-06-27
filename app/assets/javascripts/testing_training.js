@@ -1,4 +1,10 @@
 window.onload = function() {
+  // User Entry Testing
+  $('.user-entries-testing').each(function() {
+    console.log("User Entry Testing")
+  });
+  
+  // User Entry Training
   $('.user-entries-training').each(function() {
     console.log("User Entry Training")
     var count = 0;
