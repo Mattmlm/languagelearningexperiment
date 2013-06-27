@@ -3,8 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .user_entries {
-  .training_stimulus {
-    display: none;
+  .user-entries-training {
+    .training_stimulus {
+      display: none;
+    }
   }
   .show {
     display: block !important;
