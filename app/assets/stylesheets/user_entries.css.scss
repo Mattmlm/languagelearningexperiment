@@ -2,13 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.user_entries {
+.user_entries {  
+//  Styling for Training
   .user-entries-training {
-    .training_stimulus {
+    .training-stimulus {
       display: none;
     }
   }
-  .show {
-    display: block !important;
-  }
+}
+.show {
+  display: block !important;
 }
