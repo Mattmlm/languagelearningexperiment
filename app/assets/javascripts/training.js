@@ -1,14 +1,9 @@
-window.onload = function() {
-  // User Entry Testing
-  $('.user-entries-testing').each(function() {
-    console.log("User Entry Testing")
-  });
-  
+$(document).ready(function() {
   // User Entry Training
   $('.user-entries-training').each(function() {
     console.log("User Entry Training")
     var count = 0;
-    var stimuli = document.getElementsByClassName("training-stimulus");
+    var stimuli = $(".training-stimulus");
     var interval_1 = setInterval("cycleThroughStimuli()", 2000);
 
     cycleThroughStimuli = function() {
@@ -24,4 +19,4 @@ window.onload = function() {
       }
     }
   });
-};
+});

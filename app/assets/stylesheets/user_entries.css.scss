@@ -3,21 +3,53 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .user_entries {  
-//  Styling for Training
+  background: lightgray;
+  //  Styling for Training
   .user-entries-training {
+    text-align: center;
     .training-stimulus {
       display: none;
     }
   }
-  
-//  Styling for Testing
+
+  //  Styling for Testing
   .user-entries-testing {
+    text-align: center;
     .main-stimuli {
       .img-wrapper, .audio-wrapper {
         display: none;
       }
     }
+    .next {
+      display: none;
+    }
+    
+    .choices-wrapper {
+      text-align: left;
+      .choice {
+        display: inline-block;
+        width: 20%;
+        margin: 10px;
+        text-align: center;
+      }
+    }
+    
+    &.phone-to-sem {
+
+    }
+    
+    &.sem-to-phone {
+      
+    }
   }
+}
+
+img {
+  max-width: 100%;
+}
+
+audio {
+  display: none;
 }
 
 .hide {

@@ -1,11 +1,11 @@
-<div class="user-entries-testing">
-	<h1>Testing</h1>
-	<% if @phone_to_sem %>
-		<p>Phone to sem</p>
+<% if @phone_to_sem %>
+	<div class="user-entries-testing sem-to-phone">
+		<h1>Testing</h1>
+		<p>Sem to phone</p>
 		<div class='main-stimuli'>
 			<% @sems.each_with_index do |sem, index| %>
 				<% if index == 0 %>
-					<div class='img-wrapper' style='display: block'>
+					<div class='img-wrapper testing show'>
 				<% else %>
 					<div class='img-wrapper'>
 				<% end %>
@@ -13,22 +13,30 @@
 					</div>
 			<% end %>
 		</div>
-		<% @phones.each_with_index do |phone, index| %>
-			<div class='audio-choice'>
-				<div class='audio-wrapper'>
-					<%= content_tag(:audio, phone, :controls => "controls") do %>
-						<%= content_tag(:source, "", :src => "/assets/" + phone + ".wav") %>
-					<% end %>
+		<div class="choices-wrapper">
+			<% @phones.each_with_index do |phone, index| %>
+				<div class='choice'>
+					<div class='audio-wrapper'>
+						<input class="play" type="button" value="Play Word"/>
+						<%= content_tag(:audio, phone, :controls => "controls") do %>
+							<%= content_tag(:source, "", :src => "/assets/" + phone + ".wav") %>
+						<% end %>
+					</div>
+					<input class="audio-input" name="sem_to_phone" type="radio"/>
 				</div>
-				<input type="radio"/>
-			</div>
-		<% end %>
-	<% else %>
-		<p>Sem to phone</p>
+			<% end %>
+		</div>
+		<input class="next" type="button" value="Next">
+	</div>
+<% else %>
+	<div class="user-entries-testing phone-to-sem">
+		<h1>Testing</h1>
+		<p>Phone to sem</p>
 		<div class='main-stimuli'>
+			<input class="play-again" type="button" value="Play Word Again"/>
 			<% @phones.each_with_index do |phone, index| %>
 				<% if index == 0 %>
-					<div class='audio-wrapper' style='display: block'>
+					<div class='audio-wrapper testing'>
 				<% else %>
 					<div class='audio-wrapper'>
 				<% end %>
@@ -38,13 +46,16 @@
 					</div>
 			<% end %>
 		</div>
-		<% @sems.each_with_index do |sem, index| %>
-			<div class='img-choice'>
-				<div class='img-wrapper'>
-					<%= image_tag sem + ".jpg" %>
+		<div class="choices-wrapper">
+			<% @sems.each_with_index do |sem, index| %>
+				<div class='choice'>
+					<div class='img-wrapper'>
+						<%= image_tag sem + ".jpg" %>
+					</div>
+					<input class="img-input" name="phone_to_sem" type="radio"/>
 				</div>
-				<input type="radio"/>
-			</div>
-		<% end %>
-	<% end %>
-</div>
+			<% end %>
+		</div>
+		<input class="next" type="button" value="Next">
+	</div>
+<% end %>
