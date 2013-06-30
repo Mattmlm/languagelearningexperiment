@@ -4,6 +4,22 @@
 
 .user_entries {  
   background: lightgray;
+  
+  .user-entries-start, .user-entries-start-training {
+    text-align: center;
+    > div {
+      margin-top: 25%;
+      > div {
+        display: inline-block;
+        text-align: justify;
+        width: 75%;
+      }
+    }
+    input {
+      margin-top: 20px;
+    }
+  }
+  
   //  Styling for Training
   .user-entries-training {
     text-align: center;
@@ -35,11 +51,10 @@
     }
     
     &.phone-to-sem {
-
+      
     }
     
     &.sem-to-phone {
-      
     }
   }
 }

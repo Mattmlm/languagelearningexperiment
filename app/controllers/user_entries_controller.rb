@@ -3,11 +3,12 @@ class UserEntriesController < ApplicationController
   # GET /user_entries.json
   def index
     @user_entries = UserEntry.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @user_entries }
-    end
+  end
+  
+  def start
+  end
+  
+  def start_training
   end
 
   # GET /user_entries/1
