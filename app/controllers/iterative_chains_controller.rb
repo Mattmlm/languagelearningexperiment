@@ -3,11 +3,6 @@ class IterativeChainsController < ApplicationController
   # GET /iterative_chains.json
   def index
     @iterative_chains = IterativeChain.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @iterative_chains }
-    end
   end
 
   # GET /iterative_chains/1

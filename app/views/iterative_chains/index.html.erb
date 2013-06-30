@@ -1,23 +1,15 @@
-<h1>Listing iterative_chains</h1>
+<h1>All Iterative Chains and User Entries</h1>
 
-<table>
-  <tr>
-    <th>Locked</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @iterative_chains.each do |iterative_chain| %>
-  <tr>
-    <td><%= iterative_chain.locked %></td>
-    <td><%= link_to 'Show', iterative_chain %></td>
-    <td><%= link_to 'Edit', edit_iterative_chain_path(iterative_chain) %></td>
-    <td><%= link_to 'Destroy', iterative_chain, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Iterative chain', new_iterative_chain_path %>
+<ul class="iterative-chains">
+	<% @iterative_chains.each_with_index do |iterative_chain, index|%>
+		<li>
+			<div>Iterative Chain # <%= index %></div>
+			<% iterative_chain.user_entries.each_with_index do |user_entry, index| %>
+			  <div>
+			    <div><%= user_entry.pairs %></div>
+			    <div><%= user_entry.iterative_chain_id %></div>
+			  </div>
+			<% end%>
+		</li>
+	<% end%>
+</ul>
