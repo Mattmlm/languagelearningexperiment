@@ -8,6 +8,37 @@ class UserEntriesController < ApplicationController
   def start
   end
   
+  def pair_with_chain
+    @iterative_chains = IterativeChain.all
+    
+    # Find unlocked chains
+    @unlocked = @iterative_chains.select { |chain| chain[:locked] == false }
+    @chain_id = -1
+    
+    # Pick the shortest chain
+    if @unlocked.empty? != false
+      min = @unlocked[0].user_entries.length
+      @chain_id = @unlocked[0].id
+      
+      @unlocked.each_with_index { |chain, index|
+        if chain.user_entries.length < min
+          min = chain.user_entries.length
+          @chain_id = chain.id
+        end
+      }
+    end
+    
+    # All chains are locked
+    if @chain_id == -1
+      
+    # Shortest unlocked chain has been selected
+    # Set a session and lock the chain
+    else
+      
+    end
+    
+  end
+  
   def start_training
   end
 
