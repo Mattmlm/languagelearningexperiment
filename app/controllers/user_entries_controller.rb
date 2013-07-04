@@ -5,10 +5,8 @@ class UserEntriesController < ApplicationController
     @user_entries = UserEntry.all
   end
   
-  def start
-  end
-  
   def pair_with_chain
+    
     @iterative_chains = IterativeChain.all
     
     # Find unlocked chains
@@ -57,11 +55,6 @@ class UserEntriesController < ApplicationController
   # GET /user_entries/new.json
   def new
     @user_entry = UserEntry.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @user_entry }
-    end
   end
 
   # GET /user_entries/1/edit
