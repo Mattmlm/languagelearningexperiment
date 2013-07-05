@@ -5,6 +5,11 @@ class UserEntriesController < ApplicationController
     @user_entries = UserEntry.all
   end
   
+  
+  def start
+    @user_entry = UserEntry.new
+  end
+  
   def pair_with_chain
     
     @iterative_chains = IterativeChain.all
@@ -34,7 +39,25 @@ class UserEntriesController < ApplicationController
     else
       
     end
-    
+  end
+  
+  # Create a new user entry, associated with a free IterativeChain
+  def start_create
+    # # All chains are locked
+    # if @chain_id == -1
+    #   flash[:notice] = "Sorry, there are no chains available at this moment. Please try again later."
+    #   redirect_to action: :new
+    #   
+    # # Shortest unlocked chain has been selected
+    # # Set a session and lock the chain
+    # else
+    #   @chain = @iterative_chains.find(@chain_id)
+    #   @chain.user_entries.new(params[:user_entry])
+    #   @user_entry.save
+    #   # Save the user ID in the session so it can be used in
+    #   # subsequent requests
+    #   session[:current_user_id] = @user_entry.id
+    # end
   end
   
   def start_training
