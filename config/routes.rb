@@ -1,4 +1,8 @@
 Languagelearningexperiment::Application.routes.draw do
+  root :to => 'iterative_chains#index'
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
 
   # match 'iterative_chains/start' => 'iterative_chains#start', :as => 'start'
   # match 'user_entries/training' => 'user_entries#training', :as => 'training'
@@ -11,7 +15,5 @@ Languagelearningexperiment::Application.routes.draw do
   end
   
   # get ':controller(/:action(/:id))'
-  
-  root :to => 'iterative_chains#index'
 
 end
