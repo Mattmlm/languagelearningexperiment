@@ -1,7 +1,6 @@
 Languagelearningexperiment::Application.routes.draw do
   
-  root :to => 'user_entries#start'
-  # root :to => 'iterative_chains#index'
+  root :to => 'iterative_chains#index'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
