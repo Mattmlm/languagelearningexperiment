@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 ruby '1.9.3'
+gem 'jquery-rails'
 gem 'rails', '3.2.6'
 gem 'activeadmin'
 gem 'rake', '10.1.0'
@@ -28,8 +29,6 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 end
-
-gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
