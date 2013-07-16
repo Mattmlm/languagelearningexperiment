@@ -74,17 +74,6 @@ class UserEntriesController < ApplicationController
     end
   end
 
-  # GET /user_entries/new
-  # GET /user_entries/new.json
-  def new
-    @user_entry = UserEntry.new
-  end
-
-  # GET /user_entries/1/edit
-  def edit
-    @user_entry = UserEntry.find(params[:id])
-  end
-
   # POST /user_entries
   # POST /user_entries.json
   def create
