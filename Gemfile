@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 ruby '1.9.3'
-gem 'jquery-rails'
+gem "jquery-rails", "2.3.0"
 gem 'rails', '3.2.6'
 gem 'activeadmin'
 gem 'rake', '10.1.0'
