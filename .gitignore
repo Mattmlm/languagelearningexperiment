@@ -36,4 +36,3 @@ capybara-*.html
 **.orig
 rerun.txt
 .DS_Store
-Gemfile.lock
